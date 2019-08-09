@@ -1,7 +1,7 @@
-const products = require("./products");
-const quantity = require("./quantity"); //kcantidad de producto
+const productsStock= require("./productsObj");
+const productsList = require("./shoping-list");
+
 const clients = require("./clients");
-const costs = require("./costs");
 
 /**
  * Puedes crear las variables y funciones necesarias para que el sistema funcione.
@@ -11,8 +11,8 @@ const costs = require("./costs");
  * Jesse Cogollo: 2%
  **/
 
-const productsListIds = [34, 1, 9, 8, 23, 11, 40, 14, 6, 33, 29, 20, 41, 15, 5];
-const productsQuantities = [2, 5, 3, 9, 2, 4, 2, 3, 10, 8, 6, 12, 4, 5, 2, 7, 7];
+// const productsListIds = [34, 1, 9, 8, 23, 11, 40, 14, 6, 33, 29, 20, 41, 15, 5];
+// const productsQuantities = [2, 5, 3, 9, 2, 4, 2, 3, 10, 8, 6, 12, 4, 5, 2, 7, 7];
 
 /** 
  * Requerimientos:
@@ -63,7 +63,7 @@ function getCostList(client, productsIds, quantities) {
     console.log('El total de la compra señor ' + client + ' es de: ' + compra.toFixed(2) + ' 🤗');
 }
 
-const result = getCostList(clients[0], productsListIds, productsQuantities);
+const result = getCostList(clients[0], productsList);
 
 // Imprime el total de la compra
 // console.log('El total de la compra es: ' + result)
