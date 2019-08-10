@@ -1,7 +1,7 @@
-const productsStock= require("./productsObj");
-const productsList = require("./shoping-list");
-
+const products = require("./productsObj");
+const quantity = require("./quantity");
 const clients = require("./clients");
+const costs = require("./costs");
 
 /**
  * Puedes crear las variables y funciones necesarias para que el sistema funcione.
@@ -11,8 +11,8 @@ const clients = require("./clients");
  * Jesse Cogollo: 2%
  **/
 
-// const productsListIds = [34, 1, 9, 8, 23, 11, 40, 14, 6, 33, 29, 20, 41, 15, 5];
-// const productsQuantities = [2, 5, 3, 9, 2, 4, 2, 3, 10, 8, 6, 12, 4, 5, 2, 7, 7];
+const productsList = [34, 1, 9, 8, 23, 11, 40, 14, 6, 33, 29, 20, 41, 15, 5];
+const productsQuantities = [2, 5, 3, 9, 2, 4, 2, 3, 10, 8, 6, 12, 4, 5, 2, 7, 7];
 
 /** 
  * Requerimientos:
@@ -27,9 +27,9 @@ const clients = require("./clients");
 // Funciones adicionales aquí...
 
 // TODO: Función Principal getCostList
-function getCostList(client, productsIds, quantities) {
+function getCostList(client, quantities) {
     let compra = 0;
-    productsListIds.forEach(function(element, index) {
+    productsList.forEach(function(element, index) {
         // console.log(products[element]);
         // console.log(quantity[element]);
         // console.log(costs[element]);
@@ -56,17 +56,22 @@ function getCostList(client, productsIds, quantities) {
     } else if (client === 'León Ceballos') {
         compra = compra - (compra * 0.05);
     } else if (client === 'Jesse Cogollo') {
+        console.log('este es mi cliente: ');
+        
         compra = compra - (compra * 0.02);
     } else {
         compra = compra;
+        console.log(compra);
+        
     }
     console.log('El total de la compra señor ' + client + ' es de: ' + compra.toFixed(2) + ' 🤗');
 }
 
-const result = getCostList(clients[0], productsList);
+const result = getCostList(clients[0], productsList, quantity);
+
 
 // Imprime el total de la compra
-// console.log('El total de la compra es: ' + result)
+ //console.log('El total de la compra es: ' + result)
 
 /**
  * TE RECOMENDAMOS
